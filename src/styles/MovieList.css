@@ -1,7 +1,7 @@
 .movie-list {
   display: flex;
   overflow-x: auto;
-  padding: 10px 20px;
+  padding: 10px 50px;
   gap: 20px;
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox */

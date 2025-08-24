@@ -1,17 +1,14 @@
 .movie-card {
-  flex: 0 0 auto; /* Fixed width for horizontal scrolling */
-  width: 180px;
-  scroll-snap-align: start;
+  position: relative; /* Add this so absolute children position relative to this */
+  cursor: pointer;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  cursor: pointer;
   background-color: var(--card-bg, #fff);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.movie-card:hover {
-  transform: scale(1.05);
+  width: 180px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .movie-card img {
@@ -21,9 +18,39 @@
   border-radius: 8px;
 }
 
-.movie-card h3 {
-  font-size: 1rem;
-  text-align: center;
+/* Rating badge styling */
+.rating-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 36px;
+  height: 36px;
+  background-color: #0d9488; /* teal color */
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 50%; /* circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 5px #0d9488,
+    0 0 10px #0d9488,
+    0 0 15px #0d9488,
+    0 0 20px #0d9488;
+  border: 2px solid #0d9488;
+  user-select: none;
+  z-index: 10;
+}
+
+
+/* Your existing overlay styles */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
   padding: 8px;
-  color: var(--text-color);
+  box-sizing: border-box;
 }

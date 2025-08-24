@@ -1,43 +1,97 @@
+:root {
+  --bg-color: #1e1f28;         /* Dark background */
+  --text-color: #f0f0f5;       /* Light text */
+  --accent-color: #ff6f61;     /* Warm accent */
+  --hover-bg: #2a2c3a;         /* Slightly lighter background on hover */
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-color);
-  padding: 15px 20px;
-  border-bottom: 1px solid #ccc;
+  background: linear-gradient(90deg, #23242e, #2a2c3a);
+  padding: 5px 20px;
+  border-bottom: 2px solid var(--accent-color);
   color: var(--text-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
 }
 
 .navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
+  color: var(--accent-color, #0077ff); /* Use accent color or fallback */
+  letter-spacing: 1px;
+  text-shadow: none;
+  transition: color 0.3s ease;
 }
 
 .navbar .logo i {
-  margin-right: 8px;
+  margin-right: 10px;
+  color: var(--accent-color, #0077ff);
+  filter: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar .logo i:hover {
+  transform: scale(1.1);
+  color: var(--accent-hover-color, #005bb5);
+}
+
+.navbar .logo:hover {
+  color: var(--accent-hover-color, #ffd903);
+  cursor: pointer;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   margin: 0;
   padding: 0;
+  align-items: center;
+}
+
+.nav-links a{
+  color: white;
+  text-decoration: none;
 }
 
 .navbar li {
   cursor: pointer;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: 
+    color 0.3s ease, 
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .navbar li:hover {
-  color: var(--accent-color, #ff6347);
+  color: #f7f7f7;
+  background-color: rgb(207, 206, 206);
+  box-shadow:inset 0 0px 15px rgb(255, 230, 0);
 }
 
 .theme-toggle {
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--accent-color);
 }

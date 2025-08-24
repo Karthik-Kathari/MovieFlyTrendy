@@ -10,6 +10,10 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div className="movie-card" onClick={handleClick}>
+      {/* Rating badge */}
+      <div className="rating-badge">{Math.round(movie.vote_average * 10)}%</div>
+
+      {/* Movie Poster */}
       <img
         src={
           movie.poster_path
@@ -18,10 +22,12 @@ const MovieCard = ({ movie }) => {
         }
         alt={movie.title}
       />
+
+      {/* Overlay with title and info */}
       <div className="overlay">
         <h3>{movie.title}</h3>
         <p>Release: {movie.release_date}</p>
-        <p>Rating: {movie.vote_average}</p>
+        
       </div>
     </div>
   );
