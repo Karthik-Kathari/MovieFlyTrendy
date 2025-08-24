@@ -27,7 +27,6 @@ const MovieCard = ({ movie }) => {
       <div className="overlay">
         <h3>{movie.title}</h3>
         <p>Release: {movie.release_date}</p>
-        
       </div>
     </div>
   );
